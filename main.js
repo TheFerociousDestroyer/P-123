@@ -8,8 +8,8 @@ function setup()
 {
  video = createCapture(VIDEO);
  video.size(550,500);
- canvas = createCanvas(400,450);
- canvas.position(760,10);
+ canvas = createCanvas(700,450);
+ canvas.position(560,10);
  poseNet = ml5.poseNet(video, modelLoaded);
  poseNet.on('pose', gotPoses);
 }
@@ -20,8 +20,9 @@ function draw()
     background('#969A97');
     document.getElementById("text_side").innerHTML = "Width And Height of a Text will be =" + difference+"px";
     fill('#F90093');
+    textSize(difference);
     stroke('#F90093');
-    words(noseX,noseY,difference);
+    text('TheJrBanik',noseX,noseY,50,400);
 }
 
 function modelLoaded()
